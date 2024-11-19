@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:game/main.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:launch_review/launch_review.dart';
+import 'package:in_app_review/in_app_review.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -125,7 +125,10 @@ class _InfoPageState extends State<InfoPage> {
               ),
               GestureDetector(
                 onTap: () {
-                  LaunchReview.launch(iOSAppId: "6738127943");
+                  final InAppReview inAppReview = InAppReview.instance;
+                  inAppReview.openStoreListing(
+                    appStoreId: '6738127943',
+                  );
                 },
                 child: Text(
                   "Rate us",
